@@ -1,0 +1,12 @@
+extends layout
+
+block content
+    .row
+        .col-md-3
+        .col-md-6
+            h2 This is #{user.username}'s page
+            h4 Favourite books
+            each book, i in favourites
+                ul(id=book.title, class="list-group" )
+                    li.list-group-item
+                        a(href="/books/" + book.id)=book.title

@@ -1,0 +1,15 @@
+extends layout
+
+block content
+    .row
+        .col-md-3
+        .col-md-6
+            h2 Login
+            form(method='POST' action='/users/validateLogin')
+                #form-group
+                    label(for='name') Username
+                    input.form-control(type='text', placeholder='JoeBloggs' name='username' required)
+                #form-group
+                    label(for='name') Password
+                    input.form-control(type='password', name='password' required)
+                input.btn.btn-primary(type='submit', value='Login')

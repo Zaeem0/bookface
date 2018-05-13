@@ -1,0 +1,23 @@
+extends layout
+
+block content
+    .row
+        .col-md-3
+        .col-md-6
+            form(method='POST' action='/books/addBook')
+                #form-group
+                    label(for='title') Title
+                    input.form-control(type='text', placeholder='Treasure Island' name='title' )
+                #form-group
+                    label(for='author') Author
+                        p#noauthor author not listed here? &nbsp;
+                            a(href="/authors/addAuthor") add author
+                    select.form-control(name='author')
+                        
+                        each author, i in authors
+                            option(value=author.name)=author.name
+                                    
+                #form-group
+                    label(for='published') Published
+                    input.form-control(type='number', placeholder='1885' name='published' )
+                input.btn.btn-primary(type='submit', value='Submit') 

@@ -1,0 +1,39 @@
+{
+  "name": "bookface",
+  "version": "1.0.0",
+  "description": "A social networking site for people who love reading and always have their face in a book",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Zaeem0/bookface.git"
+  },
+  "author": "Zaeem Qadeer",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Zaeem0/bookface.git/issues"
+  },
+  "homepage": "https://github.com/Zaeem0/bookface.git#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.18.2",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.16.3",
+    "express-messages": "^1.0.1",
+    "express-session": "^1.15.6",
+    "express-validator": "^5.1.0",
+    "mongoose": "^5.0.12",
+    "nodemailer": "^4.6.4",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "pug": "^2.0.3",
+    "randomstring": "^1.1.5"
+  },
+  "devDependencies": {
+    "nodemon": "^1.17.2"
+  }
+}

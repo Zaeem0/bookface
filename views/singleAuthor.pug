@@ -1,0 +1,14 @@
+extends layout
+
+block content
+    h1=author.name
+    h4 Books written by this author:
+    if books
+        each book, i in books
+            p= book.title
+    else
+        
+        p No books have yet been added to this author
+        if user
+            a(href='/books/addBook') Add a book for #{author.name}
+        

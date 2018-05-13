@@ -1,0 +1,21 @@
+extends layout
+
+block content
+    .row
+        .col-md-3
+        .col-md-6
+            form(method='POST' action='/books/edit/' + book._id)
+                #form-group
+                    label(for='title') Enter a new title
+                    input.form-control(type='text', placeholder=book.title name='title' )
+                #form-group
+                    label(for='author') Change the author
+                    select.form-control(name='author')
+        
+                        each author, i in authors
+                            option(value=author.name)=author.name
+                                    
+                #form-group
+                    label(for='published') Change the published year
+                    input.form-control(type='number', placeholder=book.published name='published' )
+                input.btn.btn-primary(type='submit', value='Submit') 

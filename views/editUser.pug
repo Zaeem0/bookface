@@ -1,0 +1,14 @@
+extends layout
+
+block content
+    .row
+        .col-md-3
+        .col-md-6
+            form(method='POST' action='/users/edit/' + user._id)
+                #form-group
+                    label(for='username') Enter a new username
+                    input.form-control(type='text', placeholder=user.username name='username' )
+
+                    label(for='email') Enter a new email
+                    input.form-control(type='text', placeholder=user.email name='email' )                 
+                input.btn.btn-primary(type='submit', value='Submit') 

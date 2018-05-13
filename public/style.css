@@ -1,0 +1,60 @@
+.list-group{
+    margin-top: 10px;
+}
+
+#form-group{
+    margin-bottom:15px;
+}
+
+.sitename a{
+    color:black;
+}
+.sitename a:hover{
+    text-decoration: none;
+}
+
+#currentuser{
+    color: white;
+}
+
+nav{
+    margin-bottom: 15px;
+}
+
+
+.alert-error{
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+}
+
+.alert-success_msg{
+    color: #3c763d;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+}
+
+.comment-box{
+    margin-bottom: 15px;
+}
+
+#noauthor{
+    margin-bottom: 0;
+}
+
+.rating{float: right;}
+
+.favourite{
+    display: inline-block;
+    margin: 30px 0;
+}
+#addFavourite{
+    display: inline;
+}
+#addFave{
+    float: right;
+margin-left: 10px;
+}
+.commentSection{
+    margin-bottom: 20px;
+}

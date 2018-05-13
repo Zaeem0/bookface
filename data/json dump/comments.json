@@ -1,0 +1,2 @@
+{ "_id" : { "$oid" : "5aca80cf83680e372c8f8e62" }, "bookID" : "5aca721f8399293844bab55b", "user" : "notadmin", "body" : "This book was actually written by J.K Rowling - example comment", "__v" : 0 }
+{ "_id" : { "$oid" : "5aca812683680e372c8f8e64" }, "bookID" : "5aca6fa8aac8953b20b354cd", "user" : "notadmin", "body" : "You should add Treasure Island for Robert Louis Stevenson - Example comment", "__v" : 0 }

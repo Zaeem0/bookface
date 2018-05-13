@@ -1,0 +1,11 @@
+extends layout
+
+block content
+    .row
+        .col-md-3
+        .col-md-6
+            form(method='POST' action='/authors/addAuthor')
+                #form-group
+                    label(for='name') Name
+                    input.form-control(type='text', placeholder='Herman Melville' name='name' required)
+                input.btn.btn-primary(type='submit', value='Submit') 

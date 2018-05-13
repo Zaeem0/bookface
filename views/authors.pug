@@ -1,0 +1,28 @@
+extends layout
+
+block content
+    .row
+        .col-md-3
+        .col-md-6
+            h2 List of authors
+            if user
+                p Add an author to this list 
+                    a(href='/authors/addAuthor') +
+            else
+                p You must be logged in to add an author
+                
+            span.glyphicon.glyphicon-plus
+            
+            each author, i in authors
+                ul.list-group
+                    li.list-group-item
+                        a(href="/authors/" + author._id)=author.name
+                        
+                        if currentuser && currentuser.isAdmin
+                            form(method='POST' id="addFave" action='/authors/'+'delete/' + author._id )
+                                input.btn.btn-danger(type='submit', id=author._id, name=author.name value="Delete") 
+                                
+                                button(type="button" class="btn btn-edit")
+                                    a(href="/authors/edit/" + author._id) Edit
+
+        

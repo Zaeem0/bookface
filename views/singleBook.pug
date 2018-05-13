@@ -1,0 +1,55 @@
+extends layout
+
+block content
+    .row
+        .col-md-9
+            h1=book.title
+            h5 Written by #{book.author}
+            h6 Published in #{book.published}
+    
+            if user      
+                .favourite
+                    h4#addFavourite Add to your favourites
+                    form(method='POST' id="addFave" action='/users/'+ currentuser._id + '/addFavourite/' + book.id)
+                        input.btn.btn-primary(type='submit', id=book.id, name=book.title value="+")  
+            else 
+                
+                p Login to add this book to your favourites
+            
+            h3 Comments
+            
+            .commentSection
+                if comments
+                    each comment, i in comments
+                        .card.comment-box
+                            .card-body <strong>#{comment.user}</strong>: #{comment.body}
+                    
+                if user        
+                    form(method='POST' action='/books/'+ book._id +'/addComment')
+                        #form-group
+                            label(for='comment') Add a Comment
+                            textarea.form-control(placeholder='This is a great book' name='comment')
+                        input.btn.btn-primary(type='submit', value='Submit comment') 
+                else
+                    
+                    p Log in to add a comment
+            
+    
+        .col-md-3
+            h3 Ratings
+
+            form(method='POST' action='/books/' + book._id + '/addRating/' + currentuser.username)
+                #form-group
+                    label(for='rating') Add your rating
+                    input.form-control(type='number', placeholder='' name='rating' min='1' max='10')
+                input.btn.btn-primary(type='submit', id=book.id, name=book.title value="Submit rating")
+            
+            if ratings
+                each rating, i in ratings
+                    ul(id="name", class="list-group" )
+                        li.list-group-item
+                            <strong>#{rating.user}</strong> :
+                            span.rating= rating.rating
+        
+            
+    

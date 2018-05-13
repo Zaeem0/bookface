@@ -1,0 +1,45 @@
+doctype html
+html
+    head
+        title Bookface
+        meta(charset='utf-8')
+        meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
+        link(rel='stylesheet', href='/style.css')
+        link(rel='stylesheet', href='/bower_components/bootstrap/dist/css/bootstrap.css')
+    body
+        nav.navbar.navbar-expand-lg.navbar-dark.bg-primary
+          a.navbar-brand(href='/') Bookface
+          button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation')
+            span.navbar-toggler-icon
+          #navbarNav.collapse.navbar-collapse
+            ul.navbar-nav
+              li.nav-item
+                a.nav-link(href='/') Home 
+              li.nav-item
+                a.nav-link(href='/books') Books
+              li.nav-item
+                a.nav-link(href='/authors') Authors
+              li.nav-item
+                a.nav-link(href='/users') Users
+              
+              if user
+                
+                li.nav-item
+                  a.nav-link(href='/users/logout') Logout
+                li.nav-item
+                  a.nav-link#currentuser(href='/users/' + user._id) You are currently logged in as #{user.username}
+              else
+                
+                li.nav-item
+                  a.nav-link(href='/users/register') Register
+                li.nav-item
+                  a.nav-link(href='/users/login') Login
+                  
+        .container-fluid
+            != messages('message', locals)
+            if errors
+              each error, i in errors
+                div(class="alert alert-danger") #{error.msg}
+            block content
+    script(src="/bower_components/jquery/dist/jquery.js")
+    script(src="/bower_components/bootstrap/dist/js/bootstrap.js")

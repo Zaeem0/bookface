@@ -1,0 +1,12 @@
+extends layout
+
+block content
+    .row
+        .col-md-3
+        .col-md-6
+            h2 Verify your email address
+            form(method='POST' action='/register/verify')
+                #form-group
+                    label(for='secretToken') Secret Token
+                    input.form-control(type='text', placeholder='abc' name='secretToken' required)
+                input.btn.btn-primary(type='submit', value='Verify')

@@ -1,0 +1,2 @@
+{ "_id" : { "$oid" : "5aca6f82aac8953b20b354c9" }, "name" : "J.K Rowling", "__v" : 0 }
+{ "_id" : { "$oid" : "5aca6f92aac8953b20b354cb" }, "name" : "Robert Louis Stevenson", "__v" : 0 }

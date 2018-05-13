@@ -1,0 +1,11 @@
+extends layout
+
+block content
+    .row
+        .col-md-3
+        .col-md-6
+            form(method='POST' action='/authors/edit/' + author._id)
+                #form-group
+                    label(for='name') Enter a new Author 
+                    input.form-control(type='text', placeholder=author.name name='name' required)
+                input.btn.btn-primary(type='submit', value='Submit') 
